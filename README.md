@@ -2,6 +2,12 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Farama-Foundation/metaworld/blob/master/LICENSE)
 ![Build Status](https://github.com/Farama-Foundation/Metaworld/workflows/MetaWorld%20CI/badge.svg)
 
+# Jing Hou's work
+
+```bash
+python ./hj1.py
+```
+
 # The current version of Meta-World is a work in progress. If you find any bugs/errors please open an issue.
 
 __Meta-World is an open-source simulated benchmark for meta-reinforcement learning and multi-task learning consisting of 50 distinct robotic manipulation tasks.__ We aim to provide task distributions that are sufficiently broad to evaluate meta-RL algorithms' generalization ability to new behaviors.
