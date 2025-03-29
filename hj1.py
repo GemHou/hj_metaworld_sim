@@ -21,6 +21,8 @@ for i in range(100):
     # env.set_task(mt1.train_tasks[0])
     obs, info = env.reset()
     done = False
+    env.render()
+    # time.sleep(2)
     while not done:
         a = policy.get_action(obs)
         obs, _, _, _, info = env.step(a)

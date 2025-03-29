@@ -43,16 +43,20 @@ class SawyerPickPlaceV2Policy(Policy):
         gripper_separation = o_d["gripper_distance_apart"]
         # If error in the XY plane is greater than 0.02, place end effector above the puck
         if np.linalg.norm(pos_curr[:2] - pos_puck[:2]) > 0.02:
-            return pos_puck + np.array([0.0, 0.0, 0.1])
+            print("1")
+            return pos_puck + np.array([0.0, 0.0, 0.05])
         # Once XY error is low enough, drop end effector down on top of puck
-        elif abs(pos_curr[2] - pos_puck[2]) > 0.05 and pos_puck[-1] < 0.04:
-            return pos_puck + np.array([0.0, 0.0, 0.03])
+        elif abs(pos_curr[2] - pos_puck[2]) > 0.07 and pos_puck[-1] < 0.04:
+            print("2")
+            return pos_puck + np.array([0.0, 0.0, 0.01])
         # Wait for gripper to close before continuing to move
-        elif gripper_separation > 0.73:
+        elif gripper_separation > 0.7:  # 0.73
+            print("3")
             return pos_curr
         # Move to goal
         else:
-            return pos_goal
+            print("4")
+            return pos_goal + np.array([0.0, 0.0, 0.1])
 
     @staticmethod
     def _grab_effort(o_d: dict[str, npt.NDArray[np.float64]]) -> float:

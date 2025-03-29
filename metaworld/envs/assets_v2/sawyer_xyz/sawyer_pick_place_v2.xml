@@ -4,21 +4,21 @@
     <include file="../objects/assets/xyz_base_dependencies.xml"/>
 
     <asset>
-<!--        <mesh file="C:/Study/Metaworld-master/metaworld/envs/assets_v2/objects/assets/hj.STL" name="table_hole"-->
-<!--              scale="0.005 0.005 0.005"/>-->
+        <!--        <mesh file="C:/Study/Metaworld-master/metaworld/envs/assets_v2/objects/assets/hj.STL" name="table_hole"-->
+        <!--              scale="0.005 0.005 0.005"/>-->
         <mesh file="C:/Study/Metaworld-master/metaworld/envs/assets_v2/objects/assets/hj2.obj" name="table_hole"
-              scale="0.2 0.2 0.2"/>
+              scale="0.11 0.11 0.11"/>
     </asset>
 
-    <worldbody>
-        <body name="table_hole_body" pos="0 0 1">
-            <joint name="objjoint0" type="free" limited='false' damping="0." armature="0."/>
-            <inertial pos="0 0 0" mass=".75" diaginertia="8.80012e-04 8.80012e-04 8.80012e-04"/>
-            <geom name="table_hole_geom" type="mesh" mesh="table_hole"
-                  pos="0 0.5 1.5"/>
-<!--                  rgba="0.2 0.5 0.8 0.5" -->
-        </body>
-    </worldbody>
+<!--    <worldbody>-->
+<!--        <body name="table_hole_body" pos="0 0 1">-->
+<!--            <joint name="objjoint0" type="free" limited='false' damping="0." armature="0."/>-->
+<!--            <inertial pos="0 0 0" mass=".75" diaginertia="8.80012e-04 8.80012e-04 8.80012e-04"/>-->
+<!--            <geom name="table_hole_geom" type="mesh" mesh="table_hole"-->
+<!--                  pos="0.0 0.65 1.2"/>-->
+<!--            &lt;!&ndash;                  rgba="0.2 0.5 0.8 0.5" &ndash;&gt;-->
+<!--        </body>-->
+<!--    </worldbody>-->
 
 
     <worldbody>
@@ -35,9 +35,12 @@
             <joint name="objjoint" type="free" limited='false' damping="0." armature="0."/>
 
             <inertial pos="0 0 0" mass=".75" diaginertia="8.80012e-04 8.80012e-04 8.80012e-04"/>
-            <geom name="objGeom" type="cylinder" pos="0 0 0" solimp="0.99 0.99 0.01"
-                  size="0.03 0.03" rgba="1 0 0 1" solref="0.01 1"
-                  contype="1" conaffinity="1" friction="1 0.1 0.002" condim="4" material="block_wood"
+
+            <geom name="objGeom" type="mesh" mesh="table_hole"
+                  pos="0.0 0 0.06"  euler="1.57 0 1.57" friction="9 9 9"/>
+            <!--            <geom name="objGeom" type="cylinder" pos="0 0 0" solimp="0.99 0.99 0.01"-->
+            <!--                  size="0.0003 0.0003" rgba="1 0 0 1" solref="0.01 1"-->
+            <!--                  contype="1" conaffinity="1" friction="1 0.1 0.002" condim="4" material="block_wood"-->
             />
         </body>
 
