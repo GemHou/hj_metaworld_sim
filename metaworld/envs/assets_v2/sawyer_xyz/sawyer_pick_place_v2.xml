@@ -3,6 +3,24 @@
     <include file="../objects/assets/block_dependencies.xml"/>
     <include file="../objects/assets/xyz_base_dependencies.xml"/>
 
+    <asset>
+<!--        <mesh file="C:/Study/Metaworld-master/metaworld/envs/assets_v2/objects/assets/hj.STL" name="table_hole"-->
+<!--              scale="0.005 0.005 0.005"/>-->
+        <mesh file="C:/Study/Metaworld-master/metaworld/envs/assets_v2/objects/assets/hj2.obj" name="table_hole"
+              scale="0.2 0.2 0.2"/>
+    </asset>
+
+    <worldbody>
+        <body name="table_hole_body" pos="0 0 1">
+            <joint name="objjoint0" type="free" limited='false' damping="0." armature="0."/>
+            <inertial pos="0 0 0" mass=".75" diaginertia="8.80012e-04 8.80012e-04 8.80012e-04"/>
+            <geom name="table_hole_geom" type="mesh" mesh="table_hole"
+                  pos="0 0.5 1.5"/>
+<!--                  rgba="0.2 0.5 0.8 0.5" -->
+        </body>
+    </worldbody>
+
+
     <worldbody>
         <include file="../objects/assets/xyz_base.xml"/>
 
@@ -22,6 +40,23 @@
                   contype="1" conaffinity="1" friction="1 0.1 0.002" condim="4" material="block_wood"
             />
         </body>
+
+        <!-- Custom STL Object -->
+        <!--        <body name="custom_obj" pos="0.1 0.6 0.02">-->
+        <!--            <joint name="custom_obj_joint" type="free"/>-->
+        <!--            <inertial pos="0 0 0" mass="0.5" diaginertia="5e-04 5e-04 5e-04"/>-->
+        <!--            <geom name="customGeom" type="mesh" pos="0 0 0"-->
+        <!--                  mesh="C:/Study/Metaworld-master/metaworld/envs/assets_v2/objects/assets/hj.STL"-->
+        <!--                  rgba="0 1 0 1" solimp="0.99 0.99 0.01"-->
+        <!--                  solref="0.01 1" contype="1" conaffinity="1"-->
+        <!--                  friction="1 0.1 0.002" condim="4"/>-->
+        <!--        </body>-->
+
+
+        <!--        <asset>-->
+        <!--            <mesh file="C:/Study/Metaworld-master/metaworld/envs/assets_v2/objects/assets/hj.STL" name="assembly_peg_handle"-->
+        <!--                  scale="1 1 1"/>-->
+        <!--        </asset>-->
 
         <!-- place goal -->
         <site name="goal" pos="0.1 0.8 0.2" size="0.02"
